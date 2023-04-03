@@ -14,9 +14,9 @@ namespace Vidly.Controllers
         {
             var movie = new Movie() { Name = "Shrek!" };
 
-            ViewData["Movie"] = movie;
-            ViewBag.Movie=movie;
-            return View();
+           var viewResult=new ViewResult();
+            viewResult.ViewData.Model = movie; 
+            return View(movie);
             //return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name" });
 
         }
